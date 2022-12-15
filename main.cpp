@@ -5,11 +5,11 @@ template<typename ...T> struct type_list {
   template<template<typename...> typename M> using apply = M<T...>;
 };
 
-//#include "noop.h"
-#include "operator_t.h"
-//#include "drop_function.h"
-//#include "drop_concept.h"
-//#include "mp_at.h"
+#ifndef IMPL
+#define IMPL "operator_t.h"
+#endif
+
+#include IMPL
 
 #ifndef SIZE
 #define SIZE 16
